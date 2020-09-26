@@ -80,7 +80,6 @@ dishRouter.route('/:dishId')
 })
 
 .delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
-    Dishes.findByIdAndRemove(req.paramsms.dishId)
     Dishes.findByIdAndRemove(req.params.dishId)
     .then((resp) => {
         res.statusCode = 200;
